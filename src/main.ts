@@ -1,1 +1,1 @@
-console.log("TODO");
+import "./scss/style.scss";

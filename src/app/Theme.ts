@@ -1,13 +1,31 @@
+import { Storage } from "./Storage";
+
 type ThemePosibilities = "dark" | "light";
 
-class Theme {
+export class Theme {
   buttonElement = document.querySelector("[data-changeTheme]");
-  currentTheme: ThemePosibilities = "dark";
+  storage = new Storage<ThemePosibilities>();
+  currentTheme: ThemePosibilities;
 
   constructor() {
-    this.currentTheme = this.getSystemPreferableTheme();
+    this.currentTheme = this.setInitialTheme();
+    console.log(this.currentTheme);
     this.addEventListener();
     this.renderUI();
+  }
+
+  setInitialTheme() {
+    const storagedTheme = this.storage.getItems("theme");
+
+    console.log(storagedTheme);
+
+    if (storagedTheme) {
+      return storagedTheme;
+    }
+
+    const preferences = this.getSystemPreferableTheme();
+
+    return preferences;
   }
 
   addEventListener() {
@@ -16,6 +34,7 @@ class Theme {
 
   changeTheme() {
     this.currentTheme = this.currentTheme === "dark" ? "light" : "dark";
+    this.storage.setItemToStorage("theme", this.currentTheme);
     this.renderUI();
   }
 
@@ -48,5 +67,3 @@ class Theme {
     `;
   }
 }
-
-export default Theme;

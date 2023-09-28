@@ -1,0 +1,13 @@
+.button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  &--theme:hover &__image {
+    transform: scale(1.07);
+  }
+
+  &__image {
+    transition: transform 0.3s;
+  }
+}

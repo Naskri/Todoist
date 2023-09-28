@@ -1,0 +1,10 @@
+@use "./../abstracts/mixins" as *;
+
+body[data-theme="light"] {
+  .header {
+    background-image: url("./../../images/bg-desktop-light.jpg");
+    @include media(38rem) {
+      background-image: url("./../../images/bg-mobile-light.jpg");
+    }
+  }
+}

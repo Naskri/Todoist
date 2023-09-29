@@ -1,23 +1,20 @@
 import { Storage } from "./Storage";
 
-type ThemePosibilities = "dark" | "light";
+type Theme = "dark" | "light";
 
-export class Theme {
+export class ThemeChanger {
   buttonElement = document.querySelector("[data-changeTheme]");
-  storage = new Storage<ThemePosibilities>();
-  currentTheme: ThemePosibilities;
+  storage = new Storage<Theme>();
+  currentTheme: Theme;
 
   constructor() {
     this.currentTheme = this.setInitialTheme();
-    console.log(this.currentTheme);
     this.addEventListener();
     this.renderUI();
   }
 
   setInitialTheme() {
     const storagedTheme = this.storage.getItems("theme");
-
-    console.log(storagedTheme);
 
     if (storagedTheme) {
       return storagedTheme;

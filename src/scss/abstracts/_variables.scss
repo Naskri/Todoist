@@ -3,6 +3,7 @@
   --color-primary:hsl(220, 98%, 61%);
   --color-secondary:hsl(192, 100%, 67%)
   --color-third:hsl(280, 87%, 65%);
+  --color-error:hsl(355, 78%, 56%);
   --color-check-gradient:linear-gradient(var(--color-secondary),var(--color-third));
 
   --color-background:hsl(235, 21%, 11%);
@@ -13,6 +14,8 @@
   --color-item-complete-text:hsl(233, 14%, 35%);
   --color-filter:hsl(236, 9%, 61%);
   --color-filter-hover:hsl(236, 33%, 92%);
+  --color-input:hsl(234, 39%, 85%);
+
 
 }
 
@@ -25,4 +28,5 @@ body[data-theme="light"]{
   --color-item-complete-text:hsl(233, 11%, 84%);
     --color-filter:hsl(236, 9%, 61%);
   --color-filter-hover:hsl(235, 19%, 35%);
+  --color-input:hsl(235, 19%, 35%);
 }

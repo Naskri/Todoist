@@ -10,4 +10,11 @@
   &__image {
     transition: transform 0.3s;
   }
+
+  &--submit {
+    width: 1.5rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 1px solid var(--color-button-border);
+  }
 }

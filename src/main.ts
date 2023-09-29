@@ -1,4 +1,4 @@
 import "./scss/style.scss";
-import { Theme } from "./app/Theme";
+import { TodoApp } from "./app/TodoApp";
 
-new Theme();
+new TodoApp();

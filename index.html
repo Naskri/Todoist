@@ -11,6 +11,11 @@
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
   </head>
   <body>
     <div id="app">
@@ -29,11 +34,29 @@
                   &nbsp;
                 </button>
               </header>
+              <form class="form" data-form>
+                <div class="form__content">
+                  <div class="form__submit">
+                    <button class="button button--submit">&nbsp;</button>
+                  </div>
+                  <input
+                    type="text"
+                    class="form__input"
+                    placeholder="Create a new todo..."
+                    data-newTodo
+                  />
+                </div>
+                <p class="form__error hidden" data-formError>&nbsp;</p>
+              </form>
             </div>
           </div>
         </main>
       </div>
     </div>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

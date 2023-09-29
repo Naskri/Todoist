@@ -1,32 +1,29 @@
-:root{
-  --color-neutral:hsl(0, 0%, 98%);
-  --color-primary:hsl(220, 98%, 61%);
-  --color-secondary:hsl(192, 100%, 67%)
-  --color-third:hsl(280, 87%, 65%);
-  --color-error:hsl(355, 78%, 56%);
-  --color-check-gradient:linear-gradient(var(--color-secondary),var(--color-third));
+:root {
+  --color-neutral: hsl(0, 0%, 98%);
+  --color-primary: hsl(220, 98%, 61%);
+  --color-secondary: hsl(192, 100%, 67%);
+  --color-third: hsl(280, 87%, 65%);
+  --color-error: hsl(355, 78%, 56%);
 
-  --color-background:hsl(235, 21%, 11%);
-  --color-button-border:hsl(234, 11%, 52%);
-  --color-item-background:hsl(235, 24%, 19%);
-  --color-text:hsl(235, 19%, 35%);
-  --color-item-border:hsl(237, 14%, 26%);
-  --color-item-complete-text:hsl(233, 14%, 35%);
-  --color-filter:hsl(236, 9%, 61%);
-  --color-filter-hover:hsl(236, 33%, 92%);
-  --color-input:hsl(234, 39%, 85%);
-
-
+  --color-background: hsl(235, 21%, 11%);
+  --color-button-border: hsl(234, 11%, 52%);
+  --color-item-background: hsl(235, 24%, 19%);
+  --color-text: hsl(235, 19%, 35%);
+  --color-item-border: hsl(237, 14%, 26%);
+  --color-item-complete-text: hsl(233, 14%, 35%);
+  --color-filter: hsl(236, 9%, 61%);
+  --color-filter-hover: hsl(236, 33%, 92%);
+  --color-input: hsl(234, 39%, 85%);
 }
 
-body[data-theme="light"]{
-  --color-background:hsl(236, 33%, 92%);
-  --color-button-border:hsl(233, 11%, 84%);
-  --color-text:hsl(234, 39%, 85%);
-  --color-item-background:hsl(0,0%,100%);
-  --color-item-border:hsl(236, 33%, 92%);
-  --color-item-complete-text:hsl(233, 11%, 84%);
-    --color-filter:hsl(236, 9%, 61%);
-  --color-filter-hover:hsl(235, 19%, 35%);
-  --color-input:hsl(235, 19%, 35%);
+body[data-theme="light"] {
+  --color-background: hsl(236, 33%, 92%);
+  --color-button-border: hsl(233, 11%, 84%);
+  --color-text: hsl(234, 39%, 85%);
+  --color-item-background: hsl(0, 0%, 100%);
+  --color-item-border: hsl(236, 33%, 92%);
+  --color-item-complete-text: hsl(233, 11%, 84%);
+  --color-filter: hsl(236, 9%, 61%);
+  --color-filter-hover: hsl(235, 19%, 35%);
+  --color-input: hsl(235, 19%, 35%);
 }

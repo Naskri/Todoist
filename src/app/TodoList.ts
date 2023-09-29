@@ -1,4 +1,5 @@
 import { Notification } from "./Notification";
+import { Storage } from "./Storage";
 
 type Todo = {
   todo: string;
@@ -7,6 +8,7 @@ type Todo = {
 
 export class TodoList {
   todos: Todo[] = [];
+  storage = new Storage<Todo[]>();
   notification = new Notification();
 
   addTodo(todo: string) {
@@ -16,6 +18,7 @@ export class TodoList {
     };
 
     this.todos.push(newTodo);
+    this.storage.setItemToStorage("todos", this.todos);
     this.notification.createNotification("Succesfully added todo!");
   }
 }

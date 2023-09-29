@@ -36,7 +36,7 @@
               </header>
               <form class="form" data-form>
                 <div class="form__content">
-                  <div class="form__submit">
+                  <div class="button__container">
                     <button class="button button--submit">&nbsp;</button>
                   </div>
                   <input
@@ -48,6 +48,47 @@
                 </div>
                 <p class="form__error hidden" data-formError>&nbsp;</p>
               </form>
+
+              <div class="todos-list">
+                <div class="todos-item">
+                  <div class="button__container">
+                    <button class="button button--submit">&nbsp;</button>
+                  </div>
+                  <h2 class="heading__secondary">Jog around the park 3x</h2>
+                  <div class="button__container todos-item__delete">
+                    <button
+                      class="button button--delete"
+                      aria-label="Delete todo"
+                    >
+                      <img
+                        src="./src/images/icon-cross.svg"
+                        alt=""
+                        class="button__image"
+                      />
+                    </button>
+                  </div>
+                </div>
+                <div class="todos-item todos-item--completed">
+                  <div class="button__container">
+                    <button class="button button--submit button--completed">
+                      &nbsp;
+                    </button>
+                  </div>
+                  <h2 class="heading__secondary">Jog around the park 3x</h2>
+                  <div class="button__container todos-item__delete">
+                    <button
+                      class="button button--delete"
+                      aria-label="Delete todo"
+                    >
+                      <img
+                        src="./src/images/icon-cross.svg"
+                        alt=""
+                        class="button__image"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </main>

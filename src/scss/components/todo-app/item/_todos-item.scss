@@ -1,0 +1,18 @@
+.todos-item {
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  background-color: var(--color-item-background);
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--color-item-border);
+  }
+  &__delete {
+    margin-left: auto;
+  }
+  &--completed {
+    .heading__secondary {
+      text-decoration: line-through;
+      color: var(--color-item-complete-text);
+    }
+  }
+}

@@ -2,6 +2,10 @@ import { Storage } from "./Storage";
 
 type Theme = "dark" | "light";
 
+const isTheme = (theme: string): theme is Theme => {
+  return theme === "dark" || theme === "light";
+};
+
 export class ThemeChanger {
   buttonElement = document.querySelector("[data-changeTheme]");
   storage = new Storage<Theme>();
@@ -16,7 +20,7 @@ export class ThemeChanger {
   setInitialTheme() {
     const storagedTheme = this.storage.getItems("theme");
 
-    if (storagedTheme) {
+    if (storagedTheme && isTheme(storagedTheme)) {
       return storagedTheme;
     }
 

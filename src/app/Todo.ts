@@ -27,7 +27,7 @@ export class TodoItem {
                       data-id="${id}"
                     >
                       <img
-                        src="./public/images/icon-cross.svg"
+                        src="./images/icon-cross.svg"
                         alt=""
                         class="button__image"
                       />

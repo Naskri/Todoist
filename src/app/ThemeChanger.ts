@@ -59,9 +59,7 @@ export class ThemeChanger {
   createImage() {
     return `
       <img
-        src="./src/images/icon-${
-          this.currentTheme === "dark" ? "sun" : "moon"
-        }.svg"
+        src="./images/icon-${this.currentTheme === "dark" ? "sun" : "moon"}.svg"
         alt="${this.currentTheme === "dark" ? "Light" : "Dark"} Theme"
         class="button__image"
       />

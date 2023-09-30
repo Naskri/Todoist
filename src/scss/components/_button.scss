@@ -39,4 +39,17 @@
     align-items: center;
     justify-content: center;
   }
+
+  &--filter.active {
+    color: var(--color-primary);
+  }
+
+  &--clear,
+  &--filter {
+    color: var(--color-input);
+    transition: 0.3s;
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
 }

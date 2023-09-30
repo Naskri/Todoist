@@ -49,17 +49,29 @@
                 <p class="form__error hidden" data-formError>&nbsp;</p>
               </form>
 
-              <div class="todos-list">
+              <div class="todos-list" data-todosListContainer>
                 <div data-todosList></div>
                 <div class="todos-list__action">
                   <p class="todos-list__items">
                     <span data-todosItems>3</span>
                     items left
                   </p>
-                  <div class="todos-list__filters">
-                    <button class="button button--filter active">All</button>
-                    <button class="button button--filter">Active</button>
-                    <button class="button button--filter">Completed</button>
+                  <div class="todos-list__filters" data-filtersContainer>
+                    <button
+                      class="button button--filter active"
+                      data-filter="all"
+                    >
+                      All
+                    </button>
+                    <button class="button button--filter" data-filter="active">
+                      Active
+                    </button>
+                    <button
+                      class="button button--filter"
+                      data-filter="completed"
+                    >
+                      Completed
+                    </button>
                   </div>
                   <button class="button button--clear">Clear Completed</button>
                 </div>

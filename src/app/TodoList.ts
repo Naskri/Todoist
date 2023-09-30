@@ -1,3 +1,4 @@
+import { FilterChanger } from "./FilterChanger";
 import { Notification } from "./Notification";
 import { Storage } from "./Storage";
 import { Todo, TodoItem } from "./Todo";
@@ -6,8 +7,11 @@ export class TodoList {
   todos: Todo[] = [];
   storage = new Storage<Todo[]>();
   notification = new Notification();
+  filterChanger = new FilterChanger();
+  todoListContainer = document.querySelector("[data-todosListContainer]");
   todoListElement = document.querySelector("[data-todosList]");
   todoEmptyListElement = document.querySelector("[data-todosEmpty]");
+  todoItemsElement = document.querySelector("[data-todosItems]");
 
   constructor() {
     this.todos = this.getInitialTodos();
@@ -22,7 +26,11 @@ export class TodoList {
   }
 
   addEventListeners() {
-    this.todoListElement?.addEventListener("click", (ev) => {
+    window.addEventListener("popstate", () => {
+      this.renderList();
+    });
+
+    this.todoListContainer?.addEventListener("click", (ev) => {
       if (!(ev.target instanceof HTMLButtonElement)) return;
       const id = ev.target.dataset.id;
 
@@ -31,6 +39,11 @@ export class TodoList {
       }
       if (ev.target.classList.contains("button--edit")) {
         this.editTodo(Number(id));
+      }
+
+      if (ev.target.classList.contains("button--clear")) {
+        console.log("clear");
+        this.clearTodos();
       }
     });
   }
@@ -68,6 +81,13 @@ export class TodoList {
     this.renderList();
   }
 
+  clearTodos() {
+    this.todos = [];
+    this.storage.setItemToStorage("todos", this.todos);
+    this.notification.createNotification("Succesfully cleared todos!");
+    this.renderList();
+  }
+
   clearElementBeforeRendering() {
     if (!this.todoListElement) return;
     this.todoListElement.innerHTML = "";
@@ -85,6 +105,28 @@ export class TodoList {
     this.todoListElement.insertAdjacentHTML("beforeend", html);
   }
 
+  showTodosItems(filteredTodos: Todo[]) {
+    if (!this.todoItemsElement) return;
+    this.todoItemsElement.textContent = String(filteredTodos.length);
+  }
+
+  filteredTodos() {
+    const filter = this.filterChanger.getFilter();
+
+    console.log(filter, this.todos);
+
+    if (!filter) return this.todos;
+
+    if (filter === "active") {
+      return this.todos.filter((todo) => !todo.isCompleted);
+    }
+    if (filter === "completed") {
+      return this.todos.filter((todo) => todo.isCompleted);
+    }
+
+    return this.todos;
+  }
+
   renderList() {
     this.clearElementBeforeRendering();
 
@@ -92,7 +134,11 @@ export class TodoList {
       this.showEmptyElement();
     }
 
-    this.todos.forEach((todo) => {
+    const filteredTodos = this.filteredTodos();
+
+    this.showTodosItems(filteredTodos);
+
+    filteredTodos.forEach((todo) => {
       const newTodo = new TodoItem();
 
       this.todoListElement?.insertAdjacentHTML(

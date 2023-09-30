@@ -82,7 +82,7 @@ export class TodoList {
   }
 
   clearTodos() {
-    this.todos = [];
+    this.todos = this.todos.filter((todo) => !todo.isCompleted);
     this.storage.setItemToStorage("todos", this.todos);
     this.notification.createNotification("Succesfully cleared todos!");
     this.renderList();

@@ -8,10 +8,12 @@
   }
 
   &__image {
+    pointer-events: none;
     transition: transform 0.3s;
   }
 
-  &--submit {
+  &--submit,
+  &--edit {
     width: 1.75rem;
     aspect-ratio: 1/1;
     border-radius: 50%;
@@ -30,5 +32,11 @@
       linear-gradient(to right, var(--color-secondary), var(--color-third));
     background-repeat: no-repeat;
     background-position: center;
+  }
+
+  &--delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

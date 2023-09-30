@@ -7,6 +7,6 @@ export class Storage<T> {
   getItems(key: string) {
     const data = localStorage.getItem(key);
 
-    return Array.isArray(data) ? JSON.parse(data) : data;
+    return data;
   }
 }

@@ -4,4 +4,15 @@
   overflow: hidden;
   border: 1px solid var(--color-item-border);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  &__empty {
+    height: 4rem;
+    background-color: var(--color-item-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__empty.hidden {
+    display: none;
+  }
 }

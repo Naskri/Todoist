@@ -10,4 +10,9 @@
   color: var(--color-input);
   font-size: 1.125rem;
   font-weight: 400;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
 }

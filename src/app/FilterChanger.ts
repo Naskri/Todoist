@@ -33,8 +33,8 @@ export class FilterChanger {
 
     window.history.pushState(null, "", newUrl);
 
-    window.history.back();
-    window.history.go(1);
+    const popStateEvent = new PopStateEvent("popstate", { state: { filter } });
+    window.dispatchEvent(popStateEvent);
   }
 
   getFilter() {
